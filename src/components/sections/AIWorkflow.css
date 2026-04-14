@@ -1,0 +1,52 @@
+.ai-tools-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ai-tool-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background-color: var(--c-surface);
+  border: 0.5px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: 24px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.ai-tool-card:hover {
+  transform: translateX(8px);
+  border-color: var(--c-accent);
+}
+
+.ai-tool-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--c-surface2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 0.5px solid var(--c-border);
+}
+
+/* Inline Chat styles extending global Chat css loosely */
+.inline-chat-card {
+  height: 100%;
+  min-height: 520px;
+  max-height: 600px;
+  background-color: var(--c-surface);
+  border: 0.5px solid var(--c-border);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .ai-demo {
+    margin-top: 40px;
+  }
+}

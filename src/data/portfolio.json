@@ -1,0 +1,153 @@
+{
+  "projects": [
+    {
+      "title": "Hazehaus",
+      "link": "https://hazehaus.netlify.app/",
+      "tags": [
+        "Web Design",
+        "UI/UX",
+        "Development"
+      ],
+      "description": "Custom designed modern website build for hazehaus.",
+      "image": "/hazehaus.jpg.jpg"
+    },
+    {
+      "title": "Spider Man",
+      "link": "https://v0-spidi.vercel.app/",
+      "tags": [
+        "CSS",
+        "UI/UX",
+        "HTML"
+      ],
+      "description": "Interactive prototype and web application.",
+      "image": "/spidi.png"
+    }
+  ],
+  "aiTools": [
+    {
+      "name": "Midjourney",
+      "usecase": "Rapid moodboarding and art direction.",
+      "iconType": "zap"
+    },
+    {
+      "name": "ChatGPT / Claude",
+      "usecase": "Ideating UX copy and logic flows.",
+      "iconType": "message"
+    },
+    {
+      "name": "Galileo AI",
+      "usecase": "Prompt-to-wireframe UI generation.",
+      "iconType": "cpu"
+    },
+    {
+      "name": "Framer AI",
+      "usecase": "Instant responsive landing pages.",
+      "iconType": "pointer"
+    }
+  ],
+  "experiences": [
+    {
+      "role": "Lead UI/UX Designer",
+      "company": "PaiPai Banking",
+      "period": "2023 - Present",
+      "bullets": [
+        "Redesigned the core App experience resulting in a 40% increase in daily active users.",
+        "Implemented an AI-driven onboarding flow reducing drop-offs by 25%.",
+        "Established a comprehensive design system utilized across 4 product teams."
+      ]
+    },
+    {
+      "role": "Senior Product Designer",
+      "company": "MarketWolf",
+      "period": "2021 - 2023",
+      "bullets": [
+        "Gamified options trading interfaces, driving a 30% uplift in trade volumes.",
+        "Led user research initiatives spanning 5 key demographics across the country."
+      ]
+    },
+    {
+      "role": "UX Designer",
+      "company": "Epic Games",
+      "period": "2019 - 2021",
+      "bullets": [
+        "Mapped out player journey telemetry and insights into an internal React portal.",
+        "Collaborated closely with gameplay engineers to polish micro-interactions."
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Design",
+      "skills": [
+        "Visual Design",
+        "UI Design",
+        "Design Systems"
+      ]
+    },
+    {
+      "title": "Research",
+      "skills": [
+        "User Interviews",
+        "Usability Testing"
+      ]
+    },
+    {
+      "title": "Code",
+      "skills": [
+        "HTML / CSS",
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Computer Science Major",
+      "school": "Don Bosco Institute of Technology",
+      "year": "2024-2028"
+    },
+    {
+      "degree": "High School",
+      "school": "Sanjay Ghodawat Institute",
+      "year": "2022 - 2024"
+    },
+    {
+      "degree": "Secondary School",
+      "school": "Dr. Antonio da Silva High School",
+      "year": "2022"
+    }
+  ],
+  "motion": [
+    {
+      "title": "Onboarding Flow",
+      "tool": "After Effects · Lottie",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "title": "Checkout Redesign",
+      "tool": "Protopie",
+      "image": "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1964&auto=format&fit=crop"
+    },
+    {
+      "title": "Gesture Exploration",
+      "tool": "Framer",
+      "image": "https://images.unsplash.com/photo-1596558450255-7c0b7be9d56a?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "title": "Loading States",
+      "tool": "Lottie",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "title": "Navigation Transitions",
+      "tool": "Principle",
+      "image": "https://images.unsplash.com/photo-1627398225058-f4c023d8c227?q=80&w=1935&auto=format&fit=crop"
+    },
+    {
+      "title": "AI Prompt Feedback",
+      "tool": "After Effects",
+      "image": "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1974&auto=format&fit=crop"
+    }
+  ]
+}

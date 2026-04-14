@@ -1,0 +1,53 @@
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-inner {
+  display: inline-flex;
+  align-items: center;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-container:hover .marquee-inner {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 40px;
+  gap: 12px;
+}
+
+.marquee-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+.marquee-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.marquee-separator {
+  width: 1px;
+  height: 20px;
+  background-color: var(--c-border);
+  margin-left: 20px; /* half of 40px margin-right to balance */
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Since we triplicate, we translate by 33.33% to seamlessly loop */
+    transform: translateX(-33.3333%);
+  }
+}

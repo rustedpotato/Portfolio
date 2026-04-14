@@ -1,0 +1,58 @@
+.timeline {
+  position: relative;
+  border-left: 1px solid var(--c-border);
+  padding-left: 48px;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 32px;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 64px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-node {
+  position: absolute;
+  left: -54.5px; /* 48px padding + roughly half node width to center on border */
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--c-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--c-bg); /* Cutout effect on the line */
+}
+
+@media (max-width: 768px) {
+  .timeline-node {
+    left: -38.5px;
+  }
+}
+
+.timeline-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+
+.timeline-bullets li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.timeline-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background-color: var(--c-accent-bg);
+  border-radius: 2px;
+}
