@@ -22,7 +22,7 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | UI/UX & AI Designer",
+  title: "Chaitanyagali",
   description: "Senior UI/UX Designer crafting AI-integrated digital experiences.",
 };
 
