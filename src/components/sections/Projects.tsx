@@ -21,8 +21,6 @@ export default function Projects() {
           {data.projects.map((proj, idx) => (
             <motion.a
               href={proj.link}
-              target="_blank"
-              rel="noopener noreferrer"
               style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
               key={idx}
               className="project-card"

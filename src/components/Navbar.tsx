@@ -8,6 +8,7 @@ import { useTheme } from "next-themes";
 import { useCursor } from "@/components/CursorContext";
 import { useSound } from "@/components/SoundContext";
 import { sound } from "@/utils/soundEngine";
+import Link from "next/link";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -42,7 +43,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="nav-container">
-        <a href="#work" className="logo" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '10px' }} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+        <Link href="#work" className="logo" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '10px' }} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
           <motion.div 
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
@@ -55,17 +56,17 @@ export default function Navbar() {
             </svg>
           </motion.div>
           CHAITANYA
-        </a>
+        </Link>
         <div className="nav-links">
-          <a href="#projects" className="nav-link text-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+          <Link href="#projects" className="nav-link text-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }} onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={() => sound.playClick()}>
             <Briefcase size={14} /> Work
-          </a>
-          <a href="#about" className="nav-link text-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+          </Link>
+          <Link href="#about" className="nav-link text-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }} onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={() => sound.playClick()}>
             <User size={14} /> About
-          </a>
-          <a href="#contact" className="nav-link text-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+          </Link>
+          <Link href="#contact" className="nav-link text-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }} onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={() => sound.playClick()}>
             <Mail size={14} /> Contact
-          </a>
+          </Link>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           {mounted && (
@@ -93,10 +94,8 @@ export default function Navbar() {
               </button>
             </>
           )}
-          <a 
-            href="https://www.linkedin.com/in/chaitanya-gali-a4b2a4325"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link 
+            href="#contact"
             className="btn-ghost" 
             style={{ padding: "10px 20px", textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
             onMouseEnter={handleHover}
@@ -104,9 +103,10 @@ export default function Navbar() {
             onClick={() => sound.playClick()}
           >
             Hire Me
-          </a>
+          </Link>
         </div>
       </div>
     </motion.nav>
   );
 }
+

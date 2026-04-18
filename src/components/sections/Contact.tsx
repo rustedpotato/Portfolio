@@ -50,10 +50,10 @@ export default function Contact() {
             </div>
 
             <div className="social-links-left" style={{ marginTop: "32px" }}>
-              <a href="mailto:galichaitanya5@gmail.com" className="btn-ghost" style={{ flex: 1, textDecoration: "none", display: "flex", justifyContent: "center", alignItems: "center" }} aria-label="Email" onMouseEnter={() => sound.playHover()} onClick={() => sound.playClick()}>
+              <a href="mailto:galichaitanya5@gmail.com" className="btn-ghost" style={{ flex: 1, textDecoration: "none", display: "flex", justifyContent: "center", alignItems: "center" }} aria-label="Email" onMouseEnter={() => sound.playHover()} onClick={() => { sound.playClick(); setTimeout(() => { window.location.hash = 'email'; }, 50); }}>
                 <Mail size={18} style={{ marginRight: "8px" }} /> Email Me
               </a>
-              <a href="https://www.linkedin.com/in/chaitanya-gali-a4b2a4325" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ flex: 1, textDecoration: "none", display: "flex", justifyContent: "center", alignItems: "center" }} aria-label="LinkedIn" onMouseEnter={() => sound.playHover()} onClick={() => sound.playClick()}>
+              <a href="https://www.linkedin.com/in/chaitanya-gali-a4b2a4325" className="btn-ghost" style={{ flex: 1, textDecoration: "none", display: "flex", justifyContent: "center", alignItems: "center" }} aria-label="LinkedIn" onMouseEnter={() => sound.playHover()} onClick={() => sound.playClick()}>
                 <Globe size={18} style={{ marginRight: "8px" }} /> LinkedIn
               </a>
             </div>
@@ -73,6 +73,7 @@ export default function Contact() {
               e.preventDefault();
               sound.playClick();
               setTerminalState("submitting");
+              window.location.hash = "success";
 
               const formData = new FormData(e.currentTarget);
               try {

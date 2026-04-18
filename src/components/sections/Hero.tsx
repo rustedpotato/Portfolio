@@ -7,6 +7,7 @@ import { Compass, PenTool, Layout, Monitor } from "lucide-react";
 import "./Hero.css";
 import { useCursor } from "@/components/CursorContext";
 import { sound } from "@/utils/soundEngine";
+import Link from "next/link";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -60,7 +61,7 @@ export default function Hero() {
           </p>
 
           <div className="hero-ctas" style={{ marginTop: "40px", display: "flex", gap: "16px" }}>
-            <a
+            <Link
               href="#projects"
               className="btn-primary"
               style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
@@ -69,7 +70,7 @@ export default function Hero() {
               onClick={() => sound.playClick()}
             >
               View My Work &rarr;
-            </a>
+            </Link>
             <a
               href="/resume.pdf"
               download
