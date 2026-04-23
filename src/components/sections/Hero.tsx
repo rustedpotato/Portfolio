@@ -41,24 +41,20 @@ export default function Hero() {
             <span className="text-label">Available for work</span>
           </div>
 
-          <div className="hero-tagline">
+          <div className="hero-tagline" style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
             {tagline.map((word, i) => (
-              <div key={i} className="word-wrapper">
-                <motion.div
-                  className="text-hero word"
-                  initial={{ opacity: 0, y: 80 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.12, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  {word}{i !== tagline.length - 1 ? " " : ""}
-                </motion.div>
-              </div>
+              <motion.div
+                key={i}
+                className="text-hero"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.15, duration: 0.8, ease: "easeOut" }}
+              >
+                {word}{i !== tagline.length - 1 ? " " : ""}
+              </motion.div>
             ))}
           </div>
 
-          <p className="hero-subtext text-body" style={{ color: "var(--c-muted)", marginTop: "24px" }}>
-            Computer Science major aspiring to be a UI/UX designer and developer.
-          </p>
 
           <div className="hero-ctas" style={{ marginTop: "40px", display: "flex", gap: "16px" }}>
             <Link

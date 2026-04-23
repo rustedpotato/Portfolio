@@ -1,7 +1,7 @@
 .hero-section {
   position: relative;
   min-height: 100vh;
-  padding-top: 160px; /* Offset for navbar */
+  padding-top: 100px; /* Decreased offset for navbar */
   /* Remove bottom padding to let marquee sit at the bottom edge of viewport if desired */
   padding-bottom: 0; 
   display: flex;

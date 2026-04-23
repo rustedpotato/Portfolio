@@ -8,7 +8,7 @@ import { sound } from "@/utils/soundEngine";
 
 export default function Skills() {
   return (
-    <section className="section" id="skills" style={{ overflow: "hidden" }}>
+    <section className="section" id="skills" style={{ overflow: "hidden", paddingTop: "40px" }}>
       <div className="container" style={{ marginBottom: "40px", maxWidth: "1000px" }}>
         <span className="text-label" style={{ display: "block", marginBottom: "16px" }}>
           CAPABILITIES

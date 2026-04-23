@@ -24,7 +24,7 @@ export default function About() {
             ABOUT
           </span>
           
-          <div className="text-body" style={{ color: "var(--c-muted)", marginBottom: "48px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div className="text-h3" style={{ color: "var(--c-text)", fontWeight: 500, marginBottom: "48px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <p>
               I'm Chaitanya Gali from Don bosco Institute of technology C a computer science major in 2nd year (2024-2028) aspires to be a UI/Ux designer and developer.
             </p>

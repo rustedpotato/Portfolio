@@ -1,16 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Mail, Globe, Terminal } from "lucide-react";
 import "./Contact.css";
 import { sound } from "@/utils/soundEngine";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Contact() {
   const [time, setTime] = useState("");
+  const [mounted, setMounted] = useState(false);
   const [terminalState, setTerminalState] = useState<"idle" | "submitting" | "success">("idle");
+  const qMarkRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    setMounted(true);
     const updateClock = () => {
       const now = new Date();
       setTime(now.toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata", hour12: false }));
@@ -18,6 +23,21 @@ export default function Contact() {
     updateClock();
     const intervalId = setInterval(updateClock, 1000);
     return () => clearInterval(intervalId);
+  }, []);
+
+  useGSAP(() => {
+    if (qMarkRef.current) {
+      gsap.to(qMarkRef.current, {
+        rotation: 360,
+        y: -5,
+        scale: 1.1,
+        repeat: -1,
+        yoyo: true,
+        duration: 2,
+        ease: "power2.inOut",
+        transformOrigin: "center center",
+      });
+    }
   }, []);
 
   return (
@@ -33,7 +53,7 @@ export default function Contact() {
                 LET'S CONNECT
               </span>
               <h2 className="text-display" style={{ marginBottom: "8px" }}>
-                Got a project?<br />Let's talk.
+                Got a project<span ref={qMarkRef} style={{ display: "inline-block", color: "var(--c-accent)" }}>?</span><br />Let's talk.
               </h2>
             </div>
 
@@ -45,7 +65,7 @@ export default function Contact() {
               <div className="status-item">
                 <Terminal size={14} className="text-muted" style={{ marginRight: "8px", verticalAlign: "middle" }} />
                 <span className="text-mono">Local Time [IST]: </span>
-                <span className="text-mono live-time" suppressHydrationWarning>{time || "00:00:00"}</span>
+                <span className="text-mono live-time">{mounted ? time : "00:00:00"}</span>
               </div>
             </div>
 

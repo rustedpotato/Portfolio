@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send } from "lucide-react";
 import "./ChatWidgetFAB.css";
@@ -14,6 +14,13 @@ export default function ChatWidgetFAB() {
   const [isOpen, setIsOpen] = useState(false);
   const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat();
   const { setCursorType } = useCursor();
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isOpen && messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages, isOpen, isLoading]);
 
   return (
     <>
@@ -65,6 +72,7 @@ export default function ChatWidgetFAB() {
                   <span className="dot"></span>
                 </div>
               )}
+              <div ref={messagesEndRef} />
             </div>
 
             <form className="chat-input-area" onSubmit={handleSubmit}>

@@ -8,7 +8,7 @@ import { useCursor } from "@/components/CursorContext";
 export default function Projects() {
   const { setCursorType } = useCursor();
   return (
-    <section className="section" id="projects">
+    <section className="section" id="projects" style={{ paddingBottom: "40px" }}>
       <div className="container">
         <span className="text-label" style={{ display: "block", marginBottom: "16px" }}>
           SELECTED WORK · 2022–2025

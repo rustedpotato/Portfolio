@@ -14,6 +14,11 @@
   backdrop-filter: blur(12px);
 }
 
+[data-theme="light"] .navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--c-border);
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -25,8 +30,13 @@
 .logo {
   font-family: var(--font-space), sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: -0.02em;
+  padding: 8px 16px;
+  background-color: var(--c-surface2);
+  border-radius: var(--r-pill);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid var(--c-border);
 }
 
 .nav-links {
@@ -37,7 +47,12 @@
 
 .nav-link {
   position: relative;
-  transition: color 0.2s ease;
+  transition: box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  padding: 8px 16px;
+  background-color: var(--c-surface2);
+  border-radius: var(--r-pill);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid var(--c-border);
 }
 .nav-link:hover {
   color: var(--c-text);
