@@ -1,12 +1,10 @@
 "use client";
 
-import { MessageCircle, Zap, Cpu, MousePointer2, Send } from "lucide-react";
+import { Zap, Cpu, MousePointer2 } from "lucide-react";
 import "./AIWorkflow.css";
-import { useChat } from "@/hooks/useChat";
 import data from "@/data/portfolio.json";
 
 export default function AIWorkflow() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat();
 
   const getIcon = (type: string) => {
     switch (type) {
@@ -20,7 +18,7 @@ export default function AIWorkflow() {
 
   return (
     <section className="section" id="ai">
-      <div className="container grid-2">
+      <div className="container">
         <div className="ai-content">
           <span className="text-label" style={{ display: "block", marginBottom: "16px" }}>
             AI-AUGMENTED DESIGN
@@ -44,45 +42,6 @@ export default function AIWorkflow() {
           </div>
         </div>
 
-        <div className="ai-demo">
-          <div className="inline-chat-card">
-            <div className="chat-header">
-              <span className="chat-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <div className="dot-green" style={{ width: '6px', height: '6px' }}></div>
-                Ask my AI Assistant
-              </span>
-            </div>
-
-            <div className="chat-messages">
-              {messages.map((msg, idx) => (
-                <div key={idx} className={`chat-bubble ${msg.role}`}>
-                  {msg.content}
-                </div>
-              ))}
-              {isLoading && (
-                <div className="chat-bubble ai typing">
-                  <span className="dot"></span>
-                  <span className="dot"></span>
-                  <span className="dot"></span>
-                </div>
-              )}
-            </div>
-
-            <form className="chat-input-area" onSubmit={handleSubmit}>
-              <input
-                type="text"
-                className="chat-input"
-                placeholder="Ask about my process..."
-                value={input}
-                onChange={handleInputChange}
-                disabled={isLoading}
-              />
-              <button type="submit" className="chat-send" disabled={isLoading || !input.trim()}>
-                <Send size={16} color="#0C0C0C" />
-              </button>
-            </form>
-          </div>
-        </div>
       </div>
     </section>
   );

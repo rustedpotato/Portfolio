@@ -8,7 +8,7 @@ import { CursorProvider } from "@/components/CursorContext";
 import { SoundProvider } from "@/components/SoundContext";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import SplashAnimation from "@/components/SplashAnimation";
-import ChatWidgetFAB from "@/components/ChatWidgetFAB";
+
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
@@ -42,7 +42,7 @@ export default function RootLayout({
               <InteractiveBackground />
               <Navbar />
               {children}
-              <ChatWidgetFAB />
+
               <Cursor />
             </CursorProvider>
           </SoundProvider>
