@@ -25,7 +25,7 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: "Chaitanyagali",
-  description: "Senior UI/UX Designer crafting AI-integrated digital experiences.",
+  description: "Portfolio",
 };
 
 export default function RootLayout({
