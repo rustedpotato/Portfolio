@@ -277,31 +277,7 @@ export default function SideDecorations() {
           </div>
         </div>
 
-        {/* Charging status — visible while scrolling through About section */}
-        <div
-          className="charge-status"
-          style={{
-            opacity: aboutCharge > 0.01 && aboutCharge < 0.99 ? 1 : 0,
-            transition: "opacity 0.4s ease",
-          }}
-        >
-          <div className="charge-status-label">
-            <span className="charge-dot" />
-            CHARGING
-          </div>
-          <div className="charge-bar-track">
-            <div
-              className="charge-bar-fill"
-              style={{
-                width: `${aboutCharge * 100}%`,
-                background: aboutCharge < 0.5
-                  ? "linear-gradient(90deg, #00ff88, #ffe033)"
-                  : "linear-gradient(90deg, #ffe033, #E8C547)",
-              }}
-            />
-          </div>
-          <span className="charge-pct">{Math.round(aboutCharge * 100)}%</span>
-        </div>
+
       </div>
 
       {/* RIGHT RAIL */}
