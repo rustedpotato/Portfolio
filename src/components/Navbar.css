@@ -74,7 +74,14 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 16px 4vw;
+  }
   .nav-links {
     display: none; /* We'd need a hamburger menu here later */
+  }
+  .logo {
+    font-size: 16px;
+    padding: 6px 12px;
   }
 }

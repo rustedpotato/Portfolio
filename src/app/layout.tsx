@@ -8,6 +8,7 @@ import { CursorProvider } from "@/components/CursorContext";
 import { SoundProvider } from "@/components/SoundContext";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import SplashAnimation from "@/components/SplashAnimation";
+import SideDecorations from "@/components/SideDecorations";
 
 
 const spaceGrotesk = Space_Grotesk({
@@ -43,6 +44,7 @@ export default function RootLayout({
               <Navbar />
               {children}
 
+              <SideDecorations />
               <Cursor />
             </CursorProvider>
           </SoundProvider>

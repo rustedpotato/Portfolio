@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Mail, Globe, Terminal } from "lucide-react";
 import "./Contact.css";
 import { sound } from "@/utils/soundEngine";
+import { useCursor } from "@/components/CursorContext";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -13,6 +14,8 @@ export default function Contact() {
   const [mounted, setMounted] = useState(false);
   const [terminalState, setTerminalState] = useState<"idle" | "submitting" | "success">("idle");
   const qMarkRef = useRef<HTMLSpanElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+  const { setCursorType } = useCursor();
 
   useEffect(() => {
     setMounted(true);
@@ -25,7 +28,7 @@ export default function Contact() {
     return () => clearInterval(intervalId);
   }, []);
 
-  useGSAP(() => {
+  const { contextSafe } = useGSAP(() => {
     if (qMarkRef.current) {
       gsap.to(qMarkRef.current, {
         rotation: 360,
@@ -38,10 +41,43 @@ export default function Contact() {
         transformOrigin: "center center",
       });
     }
-  }, []);
+  }, { scope: contactRef });
+
+  const onSocialEnter = contextSafe((e: React.MouseEvent<HTMLElement>) => {
+    setCursorType("button");
+    sound.playHover();
+    gsap.to(e.currentTarget, {
+      scale: 1.05,
+      y: -3,
+      rotateX: 3,
+      rotateY: -3,
+      borderColor: "var(--c-accent)",
+      color: "var(--c-accent)",
+      boxShadow: "0 8px 24px rgba(232,197,71,0.2)",
+      duration: 0.35,
+      ease: "back.out(2)",
+      overwrite: "auto",
+    });
+  });
+
+  const onSocialLeave = contextSafe((e: React.MouseEvent<HTMLElement>) => {
+    setCursorType("default");
+    gsap.to(e.currentTarget, {
+      scale: 1,
+      y: 0,
+      rotateX: 0,
+      rotateY: 0,
+      borderColor: "var(--c-text)",
+      color: "var(--c-text)",
+      boxShadow: "none",
+      duration: 0.4,
+      ease: "power3.out",
+      overwrite: "auto",
+    });
+  });
 
   return (
-    <section className="section" id="contact" style={{ paddingBottom: "60px" }}>
+    <section className="section" id="contact" style={{ paddingBottom: "60px" }} ref={contactRef as React.RefObject<HTMLElement>}>
       <div className="container contact-container">
 
         <div className="grid-2" style={{ width: "100%", gap: "32px", marginBottom: "80px", alignItems: "stretch" }}>
@@ -70,10 +106,28 @@ export default function Contact() {
             </div>
 
             <div className="social-links-left" style={{ marginTop: "32px" }}>
-              <a href="mailto:galichaitanya5@gmail.com" className="btn-ghost" style={{ flex: 1, textDecoration: "none", display: "flex", justifyContent: "center", alignItems: "center" }} aria-label="Email" onMouseEnter={() => sound.playHover()} onClick={() => { sound.playClick(); setTimeout(() => { window.location.hash = 'email'; }, 50); }}>
+              <a
+                href="mailto:galichaitanya5@gmail.com"
+                className="btn-ghost"
+                data-magnetic
+                style={{ flex: 1, textDecoration: "none", display: "flex", justifyContent: "center", alignItems: "center", transformStyle: "preserve-3d" }}
+                aria-label="Email"
+                onMouseEnter={onSocialEnter}
+                onMouseLeave={onSocialLeave}
+                onClick={() => { sound.playClick(); }}
+              >
                 <Mail size={18} style={{ marginRight: "8px" }} /> Email Me
               </a>
-              <a href="https://www.linkedin.com/in/chaitanya-gali-a4b2a4325" className="btn-ghost" style={{ flex: 1, textDecoration: "none", display: "flex", justifyContent: "center", alignItems: "center" }} aria-label="LinkedIn" onMouseEnter={() => sound.playHover()} onClick={() => sound.playClick()}>
+              <a
+                href="https://www.linkedin.com/in/chaitanya-gali-a4b2a4325"
+                className="btn-ghost"
+                data-magnetic
+                style={{ flex: 1, textDecoration: "none", display: "flex", justifyContent: "center", alignItems: "center", transformStyle: "preserve-3d" }}
+                aria-label="LinkedIn"
+                onMouseEnter={onSocialEnter}
+                onMouseLeave={onSocialLeave}
+                onClick={() => sound.playClick()}
+              >
                 <Globe size={18} style={{ marginRight: "8px" }} /> LinkedIn
               </a>
             </div>
@@ -134,7 +188,13 @@ export default function Contact() {
                     <textarea name="message" className="raw-input text-mono resize-none" style={{ flex: 1, minHeight: "120px" }} placeholder="Initiate handshake..." required onFocus={() => sound.playHover()} onKeyDown={() => { if (Math.random() > 0.8) sound.playClick() }}></textarea>
                   </div>
                   <div style={{ marginTop: "16px", textAlign: "right" }}>
-                    <button type="submit" className="btn-primary terminal-submit" onMouseEnter={() => sound.playHover()}>
+                    <button
+                      type="submit"
+                      className="btn-primary terminal-submit"
+                      data-magnetic
+                      onMouseEnter={onSocialEnter}
+                      onMouseLeave={onSocialLeave}
+                    >
                       EXECUTE &rarr;
                     </button>
                   </div>

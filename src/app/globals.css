@@ -39,6 +39,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  cursor: none !important;
+}
+
+::selection {
+  background-color: var(--c-accent);
+  color: var(--c-bg);
+}
+
+.magnetic-wrap {
+  display: inline-flex;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 html {
@@ -49,6 +60,7 @@ body {
   background-color: var(--c-bg);
   color: var(--c-text);
   font-family: var(--font-space), sans-serif;
+  position: relative;
   overflow-x: hidden;
 }
 
@@ -111,11 +123,11 @@ body {
 }
 
 .section {
-  padding: 120px 0;
+  padding: 80px 0;
 }
 @media (max-width: 768px) {
   .section {
-    padding: 64px 0;
+    padding: 48px 0;
   }
 }
 
@@ -180,4 +192,174 @@ a {
 }
 [data-theme="light"] .theme-icon-dynamic {
   filter: brightness(0); /* #000000 */
+}
+
+/* ═══════════════════════════════════════════════
+   SIDE RAILS — gun spine (left) + social (right)
+   Only shown when there's actual gutter space
+═══════════════════════════════════════════════ */
+.side-rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.side-rail--left  { left:  16px; }
+.side-rail--right { right: 16px; }
+
+/* Hide when viewport is too narrow for gutters */
+@media (max-width: 1100px) {
+  .side-rail { display: none; }
+}
+
+/* ─── Spine track (barrel extends into this) ─── */
+.spine-track {
+  position: relative;
+  width: 1px;
+  height: 180px;
+  background-color: var(--c-border);
+  margin-top: 2px; /* flush against gun muzzle */
+}
+
+.spine-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--c-accent);
+  transition: height 0.08s linear;
+}
+
+/* ─── Bullet — oval shape, travels down the barrel ─── */
+.spine-dot {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 11px;
+  border-radius: 4px 4px 2px 2px; /* pointed top, flat bottom — bullet shape */
+  background: linear-gradient(180deg, #fff6c0 0%, #E8C547 40%, #b8912a 100%);
+  box-shadow: 0 0 10px 3px rgba(232, 197, 71, 0.55);
+  transition: top 0.1s linear;
+  overflow: visible; /* let label escape */
+}
+
+/* ─── Label fires out to the right of the bullet ─── */
+.bullet-label {
+  position: absolute;
+  left: 14px;             /* just past the bullet edge */
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--c-accent);
+  text-transform: uppercase;
+  pointer-events: none;
+  /* GSAP will animate opacity/x — start visible so first render shows */
+  opacity: 1;
+}
+
+/* ─── Right: social icon column ─── */
+.social-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.social-col-line {
+  width: 1px;
+  height: 72px;
+  background-color: var(--c-border);
+}
+
+.social-col-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-muted);
+  transition: color 0.25s ease, transform 0.25s ease;
+  text-decoration: none;
+}
+
+
+.social-col-icon:hover {
+  color: var(--c-accent);
+  transform: translateY(-2px);
+}
+
+/* ── Plasma emitter pulse — speed controlled via inline animation-duration ── */
+@keyframes plasmaCharge {
+  from {
+    transform: scale(0.82);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.28);
+    opacity: 1;
+  }
+}
+
+/* ── Charging status HUD ── */
+.charge-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  pointer-events: none;
+}
+
+.charge-status-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono), monospace;
+  font-size: 7px;
+  letter-spacing: 0.18em;
+  color: var(--c-accent);
+  text-transform: uppercase;
+}
+
+.charge-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #00ff88;
+  animation: chargePulse 0.6s ease-in-out infinite alternate;
+  flex-shrink: 0;
+}
+
+@keyframes chargePulse {
+  from { opacity: 0.3; box-shadow: 0 0 2px #00ff88; }
+  to   { opacity: 1;   box-shadow: 0 0 8px #00ff88, 0 0 14px #00ff8855; }
+}
+
+.charge-bar-track {
+  width: 44px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--c-border);
+  overflow: hidden;
+}
+
+.charge-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 6px rgba(232, 197, 71, 0.6);
+}
+
+.charge-pct {
+  font-family: var(--font-mono), monospace;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: var(--c-muted);
 }

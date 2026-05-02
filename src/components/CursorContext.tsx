@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useContext, useState, ReactNode } from "react";
 
-export type CursorType = "default" | "project" | "button";
+export type CursorType = "default" | "project" | "button" | "text" | "magnetic";
 
 interface CursorContextProps {
   cursorType: CursorType;

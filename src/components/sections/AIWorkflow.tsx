@@ -1,6 +1,6 @@
 "use client";
 
-import { Zap, Cpu, MousePointer2 } from "lucide-react";
+import { Zap, Cpu, MousePointer2, MessageCircle } from "lucide-react";
 import "./AIWorkflow.css";
 import data from "@/data/portfolio.json";
 

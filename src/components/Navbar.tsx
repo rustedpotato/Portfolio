@@ -74,7 +74,8 @@ export default function Navbar() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <button
             className="gsap-nav-item"
-            style={{ background: 'none', border: 'none', color: 'inherit', padding: 0, cursor: 'pointer', display: 'flex' }}
+            data-magnetic
+            style={{ background: 'none', border: 'none', color: 'inherit', padding: 0, cursor: 'none', display: 'flex' }}
             onMouseEnter={onNavEnter} 
             onMouseLeave={onNavLeave}
             onClick={() => {
@@ -95,18 +96,18 @@ export default function Navbar() {
               </svg>
             </motion.div>
           </button>
-          <Link href="#work" className="logo gsap-nav-item" style={{ textDecoration: 'none', color: 'var(--c-text)', fontSize: '18px', fontWeight: 'bold' }} onMouseEnter={onNavEnter} onMouseLeave={onNavLeave}>
+          <Link href="#work" className="logo gsap-nav-item" data-magnetic style={{ textDecoration: 'none', color: 'var(--c-text)', fontSize: '18px', fontWeight: 'bold' }} onMouseEnter={onNavEnter} onMouseLeave={onNavLeave}>
             CHAITANYA
           </Link>
         </div>
         <div className="nav-links">
-          <Link href="#projects" className="nav-link text-label gsap-nav-item" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '15px' }} onMouseEnter={onNavEnter} onMouseLeave={onNavLeave} onClick={() => sound.playClick()}>
+          <Link href="#projects" className="nav-link text-label gsap-nav-item" data-magnetic style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '15px' }} onMouseEnter={onNavEnter} onMouseLeave={onNavLeave} onClick={() => sound.playClick()}>
             <Briefcase size={16} /> Work
           </Link>
-          <Link href="#about" className="nav-link text-label gsap-nav-item" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '15px' }} onMouseEnter={onNavEnter} onMouseLeave={onNavLeave} onClick={() => sound.playClick()}>
+          <Link href="#about" className="nav-link text-label gsap-nav-item" data-magnetic style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '15px' }} onMouseEnter={onNavEnter} onMouseLeave={onNavLeave} onClick={() => sound.playClick()}>
             <User size={16} /> About
           </Link>
-          <Link href="#contact" className="nav-link text-label gsap-nav-item" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '15px' }} onMouseEnter={onNavEnter} onMouseLeave={onNavLeave} onClick={() => sound.playClick()}>
+          <Link href="#contact" className="nav-link text-label gsap-nav-item" data-magnetic style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '15px' }} onMouseEnter={onNavEnter} onMouseLeave={onNavLeave} onClick={() => sound.playClick()}>
             <Mail size={16} /> Contact
           </Link>
         </div>
@@ -115,7 +116,8 @@ export default function Navbar() {
           <Link 
             href="#contact"
             className="btn-ghost gsap-nav-item" 
-            style={{ padding: "10px 20px", textDecoration: 'none', display: 'inline-flex', alignItems: 'center', fontSize: '15px', fontWeight: '500' }}
+            data-magnetic
+            style={{ padding: "8px 16px", textDecoration: 'none', display: 'inline-flex', alignItems: 'center', fontSize: '14px', fontWeight: '500' }}
             onMouseEnter={onNavEnter}
             onMouseLeave={onNavLeave}
             onClick={() => sound.playClick()}
