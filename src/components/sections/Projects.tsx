@@ -7,6 +7,7 @@ import { useCursor } from "@/components/CursorContext";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,8 +83,10 @@ export default function Projects() {
 
         <div className="grid-2">
           {data.projects.map((proj, idx) => (
-            <a
+            <Link
               href={proj.link}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ textDecoration: "none", color: "inherit", display: "block", opacity: 0 }}
               key={idx}
               className="project-card"
@@ -109,7 +112,7 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

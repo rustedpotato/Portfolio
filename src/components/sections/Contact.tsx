@@ -114,12 +114,14 @@ export default function Contact() {
                 aria-label="Email"
                 onMouseEnter={onSocialEnter}
                 onMouseLeave={onSocialLeave}
-                onClick={() => { sound.playClick(); }}
+                onClick={() => { sound.playClick(); setTimeout(() => { window.location.hash = 'email'; }, 50); }}
               >
                 <Mail size={18} style={{ marginRight: "8px" }} /> Email Me
               </a>
               <a
                 href="https://www.linkedin.com/in/chaitanya-gali-a4b2a4325"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-ghost"
                 data-magnetic
                 style={{ flex: 1, textDecoration: "none", display: "flex", justifyContent: "center", alignItems: "center", transformStyle: "preserve-3d" }}
