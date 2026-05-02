@@ -79,26 +79,36 @@
     {
       "title": "Frontend Development",
       "skills": [
-        "Core: HTML5, CSS3, and JavaScript (ES6+).",
-        "Frameworks: React and Next.js.",
-        "Styling & UI: Creative CSS, UI/UX design principles, and responsive layouts.",
-        "Animation & 3D: GSAP (GreenSock Animation Platform) for scroll-based animations, WebGL, and Three.js for 3D rendering."
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Creative CSS",
+        "UI/UX Design",
+        "Responsive Layouts",
+        "GSAP",
+        "WebGL",
+        "Three.js"
       ]
     },
     {
       "title": "Backend & Databases",
       "skills": [
-        "Frameworks: Java Spring Boot.",
-        "Databases: Proficiency in both SQL and NoSQL database management systems.",
-        "E-commerce: Integration with platforms like Shopify (including custom storefront development)."
+        "Java Spring Boot",
+        "SQL",
+        "NoSQL",
+        "Shopify",
+        "Custom Storefronts"
       ]
     },
     {
       "title": "Core Computer Science",
       "skills": [
-        "Data Structures & Algorithms (DSA): Practical implementation and problem-solving.",
-        "Networking: Understanding of computer networking protocols and concepts.",
-        "Tools: Version control with GitHub and deployment workflows using platforms like Vercel."
+        "Data Structures & Algorithms",
+        "Networking",
+        "GitHub",
+        "Vercel"
       ]
     }
   ],
