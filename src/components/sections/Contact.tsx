@@ -183,7 +183,7 @@ export default function Contact() {
                   </div>
                   <div className="raw-group">
                     <label className="text-mono raw-label">_email:</label>
-                    <input type="email" name="email" className="raw-input text-mono" placeholder="type here..." required onFocus={() => sound.playHover()} />
+                    <input type="email" name="email" className="raw-input text-mono" placeholder="enter your email here" required onFocus={() => sound.playHover()} />
                   </div>
                   <div className="raw-group" style={{ flex: 1 }}>
                     <label className="text-mono raw-label">_transmission:</label>
