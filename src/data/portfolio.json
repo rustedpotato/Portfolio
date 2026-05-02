@@ -77,38 +77,22 @@
   ],
   "capabilities": [
     {
-      "title": "Frontend Development",
+      "title": "Design Skills",
       "skills": [
-        "HTML5",
-        "CSS3",
+        "UI/UX Design",
+        "Graphic Design",
+        "Figma",
+        "Framer",
+        "Canva"
+      ]
+    },
+    {
+      "title": "Tech Stack",
+      "skills": [
         "JavaScript",
         "React",
-        "Next.js",
-        "Creative CSS",
-        "UI/UX Design",
-        "Responsive Layouts",
-        "GSAP",
-        "WebGL",
-        "Three.js"
-      ]
-    },
-    {
-      "title": "Backend & Databases",
-      "skills": [
-        "Java Spring Boot",
-        "SQL",
-        "NoSQL",
-        "Shopify",
-        "Custom Storefronts"
-      ]
-    },
-    {
-      "title": "Core Computer Science",
-      "skills": [
-        "Data Structures & Algorithms",
-        "Networking",
-        "GitHub",
-        "Vercel"
+        "Python",
+        "SQL"
       ]
     }
   ],
