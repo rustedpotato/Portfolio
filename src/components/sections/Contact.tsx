@@ -18,14 +18,14 @@ export default function Contact() {
   const { setCursorType } = useCursor();
 
   useEffect(() => {
-    setMounted(true);
+    const timeout = setTimeout(() => setMounted(true), 0);
     const updateClock = () => {
       const now = new Date();
       setTime(now.toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata", hour12: false }));
     };
     updateClock();
     const intervalId = setInterval(updateClock, 1000);
-    return () => clearInterval(intervalId);
+    return () => { clearTimeout(timeout); clearInterval(intervalId); };
   }, []);
 
   const { contextSafe } = useGSAP(() => {
@@ -86,10 +86,10 @@ export default function Contact() {
           <div className="dashboard-box">
             <div style={{ marginBottom: "48px" }}>
               <span className="text-label" style={{ display: "block", marginBottom: "16px" }}>
-                LET'S CONNECT
+                LET&apos;S CONNECT
               </span>
               <h2 className="text-display" style={{ marginBottom: "8px" }}>
-                Got a project<span ref={qMarkRef} style={{ display: "inline-block", color: "var(--c-accent)" }}>?</span><br />Let's talk.
+                Got a project<span ref={qMarkRef} style={{ display: "inline-block", color: "var(--c-accent)" }}>?</span><br />Let&apos;s talk.
               </h2>
             </div>
 
@@ -219,7 +219,7 @@ export default function Contact() {
               {terminalState === "success" && (
                 <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", padding: "40px", minHeight: "300px" }}>
                   <span className="text-mono" style={{ color: "var(--c-muted)", marginBottom: "8px" }}>&gt; TRANSMISSION COMPLETE.</span>
-                  <span className="text-mono" style={{ color: "var(--c-text)", marginBottom: "16px" }}>Handshake successful. I've received your coordinates and will reach back out soon.</span>
+                  <span className="text-mono" style={{ color: "var(--c-text)", marginBottom: "16px" }}>Handshake successful. I&apos;ve received your coordinates and will reach back out soon.</span>
                   <button type="button" className="btn-ghost text-mono" onClick={() => { sound.playClick(); setTerminalState("idle"); }} onMouseEnter={() => sound.playHover()}>
                     [RESET_TERMINAL]
                   </button>

@@ -22,7 +22,7 @@ export default function Cursor() {
   const scaleSpring = useSpring(1, { stiffness: 300, damping: 25 });
 
   // Animate inner dot with rAF for zero-lag tracking
-  const animateDot = useCallback(() => {
+  const animateDot = useCallback(function animateDot() {
     if (dotRef.current) {
       dotRef.current.style.transform = `translate(${rawX.current - 3}px, ${rawY.current - 3}px)`;
     }

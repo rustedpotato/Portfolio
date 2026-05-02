@@ -145,7 +145,7 @@ export default function About() {
 
           <div className="text-h3" style={{ color: "var(--c-text)", fontWeight: 500, marginBottom: "48px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <p>
-              I'm Chaitanya Gali from Don Bosco Institute of Technology — a computer science major in 2nd year (2024–2028) who aspires to be a UI/UX designer and developer.
+              I&apos;m Chaitanya Gali from Don Bosco Institute of Technology — a computer science major in 2nd year (2024–2028) who aspires to be a UI/UX designer and developer.
             </p>
           </div>
 

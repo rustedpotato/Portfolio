@@ -152,7 +152,7 @@ export default function HeroGlassDistortion() {
     let w = 0, h = 0;
     let mouseX = 0, mouseY = 0;
     let raf: number;
-    let startTime = performance.now();
+    const startTime = performance.now();
 
     const resize = () => {
       const rect = canvas.parentElement?.getBoundingClientRect();
