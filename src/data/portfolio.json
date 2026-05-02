@@ -79,20 +79,29 @@
     {
       "title": "Design Skills",
       "skills": [
-        "UI/UX Design",
         "Graphic Design",
-        "Figma",
         "Framer",
-        "Canva"
+        "Canva",
+        "Photoshop"
       ]
     },
     {
       "title": "Tech Stack",
       "skills": [
+        "HTML",
+        "CSS",
         "JavaScript",
         "React",
         "Python",
-        "SQL"
+        "Java"
+      ]
+    },
+    {
+      "title": "Database",
+      "skills": [
+        "SQL",
+        "NoSQL",
+        "MongoDB"
       ]
     }
   ],
